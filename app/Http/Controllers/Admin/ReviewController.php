@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ReviewRequest;
 use App\Models\Review;
 use App\Models\ServiceType;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $query = Review::query()->orderBy('date');
+        $query = Review::query();
         
         if (!Auth::user()->isAdmin())
             $query->where('user_id', auth()->id());
@@ -54,9 +55,10 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ReviewRequest $request)
     {
         $attributes = $request->validated();
+        
         $attributes['user_id'] = auth()->id();
         
         Review::create($attributes);
@@ -89,7 +91,7 @@ class ReviewController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Review $review)
+    public function update(ReviewRequest $request, Review $review)
     {
         // Authorize the user using the `update` policy for the Review model
         Gate::authorize('update', $review);

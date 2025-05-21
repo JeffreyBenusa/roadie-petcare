@@ -19,7 +19,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $query = Job::query()->orderBy('date');
+        $query = Job::query();
         
         if (!Auth::user()->isAdmin())
             $query->where('user_id', auth()->id());

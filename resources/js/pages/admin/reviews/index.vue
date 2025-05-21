@@ -49,8 +49,6 @@ const breadcrumbs: BreadcrumbItem[] = [
         <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
             <div class="flex w-full justify-between items-center">
                 <h1 class="text-lg font-bold mr-1">Reviews </h1>
-                <Link class="bg-primary text-primary-foreground rounded-md py-1 px-2 cursor-pointer"
-                      href="/admin/reviews/create">Create Job</Link>
             </div>
 
             <Table>

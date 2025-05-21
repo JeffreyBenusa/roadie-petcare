@@ -29,8 +29,8 @@ const appName = import.meta.env.VITE_APP_NAME || 'Roadies';
 createInertiaApp({
     title: (title) => `${title} | ${appName}`,
     resolve: async name => {
-        const pages = import.meta.glob('./Pages/**/*.vue')
-        const importPage = pages[`./Pages/${name}.vue`]
+        const pages = import.meta.glob('./pages/**/*.vue')
+        const importPage = pages[`./pages/${name}.vue`]
 
         if (!importPage) {
             throw new Error(`Page not found: ${name}`)

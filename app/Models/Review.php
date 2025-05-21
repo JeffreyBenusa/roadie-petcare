@@ -11,11 +11,11 @@ class Review extends Pivot
     protected $table = 'reviews';
     
     protected $fillable = [
-        'user_id',
+        'provider_id',
         'job_id',
         'rating',
         'title',
-        'description'
+        'body'
     ];
     
     /** @use HasFactory<\Database\Factories\ReviewFactory> */

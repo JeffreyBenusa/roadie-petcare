@@ -17,7 +17,7 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Job::class)->cascadeOnDelete()->unique();
+            $table->foreignIdFor(Job::class)->cascadeOnDelete()->unique()->nullable();
             $table->foreignIdFor( User::class, 'provider_id')->cascadeOnDelete();
             $table->string('title');
             $table->text('body');
