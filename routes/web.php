@@ -5,16 +5,15 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AvailabilityDateController;
 
 
 Route::get('/', [HomepageController::class, 'show'])->name('home');
 
-Route::get('search', function () {
-    return Inertia::render('Search');
-});
-
 Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
 Route::get('jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+
+Route::get('/providers', [AvailabilityDateController::class, 'search'])->name('providers.index');
 
 Route::resource('users', UserController::class);
 

@@ -7,6 +7,7 @@ use App\Models\ServiceType;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Database\Seeders\AvailabilityDateSeeder;
 use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
@@ -56,5 +57,11 @@ class DatabaseSeeder extends Seeder
                 'provider_id' => $users->random()->id,
             ])->create();
         }
+        
+        
+        // Call separate Seeders
+        $this->call([
+            AvailabilityDateSeeder::class,
+        ]);
     }
 }
