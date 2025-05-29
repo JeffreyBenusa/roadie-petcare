@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
-use App\Models\Job;
+use App\Models\Listing;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -49,13 +49,16 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user() ? [
                     ...$request->user()->toArray(),
                     'can' => [
-                        'job'=> [
-                            'create' => $request->user()->can('create', Job::class)
+                        'listing'=> [
+                            'create' => $request->user()->can('create', Listing::class)
                         ]
                     ],
                 ] : null,
             ],
-            'fruit' => ['apple', 'banana', 'orange'],
+            'flash' => fn () => [
+                'success' => session('success'),
+                'error' => session('error'),
+            ],
             'ziggy' => [
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),

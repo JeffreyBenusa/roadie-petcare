@@ -23,13 +23,13 @@ import {
 const props = defineProps({
     users: Array,
     filters: Object,
-    serviceTypes: Array,
+    services: Array,
 });
 
 const form = useForm({
     start_date: props.filters?.start_date || '',
     end_date: props.filters?.end_date || '',
-    service_type_id: props.filters?.service_type_id || ''
+     service_id: props.filters?. service_id || ''
 });
 
 // Watch for start_date and auto-fill end_date if empty
@@ -59,19 +59,19 @@ const submitSearch = () => {
             </CardHeader>
             <CardContent class="grid gap-4 md:grid-cols-3">
                 <div>
-                    <label for="service_type">Service Type</label>
-                    <Select v-model="form.service_type_id"  class="w-full border rounded p-2 h-[42px]">
+                    <label for="services">Services</label>
+                    <Select v-model="form. service_id"  class="w-full border rounded p-2 h-[42px]">
                         <SelectTrigger class="w-[180px]">
                             <SelectValue placeholder="Select Service Type" />
                         </SelectTrigger>
                         <SelectContent>
                             <SelectGroup>
                                 <SelectItem
-                                        v-for="serviceType in props.serviceTypes"
-                                        :key=serviceType.id
-                                        :value="String(serviceType.id)"
+                                        v-for="service in props.services"
+                                        :key=service.id
+                                        :value="String(service.id)"
                                 >
-                                    {{ serviceType.name }}
+                                    {{ service.name }}
                                 </SelectItem>
                             </SelectGroup>
                         </SelectContent>

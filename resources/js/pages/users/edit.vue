@@ -1,7 +1,7 @@
 <template>
     <Head>
         <title>Edit User</title>
-        <meta name="description" content="Create Job" head-key="description">
+        <meta name="description" content="Create Listing" head-key="description">
         <meta name="robots" content="noindex,nofollow" head-key="create">
     </Head>
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
+use App\Models\Listing;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -35,8 +35,8 @@ class HomepageController extends Controller
             ->get()
             ->map(fn ($review) => [
                 'id' => $review->id,
-                'name' => $review->author->name ?? 'Anonymous',
-                'service' => fake()->jobTitle,
+                'name' => $review->user->name ?? 'Anonymous',
+                'service' => fake()->jobTitle(),
                 'rating' => $review->rating,
                 'body' => $review->body,
             ]);

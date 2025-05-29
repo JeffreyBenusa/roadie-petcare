@@ -25,6 +25,11 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
+const submit = {
+    url: `/admin/reviews/${props.review?.id}`,
+    method: "patch"
+};
+
 </script>
 
 <template>
@@ -37,7 +42,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                 <Heading title="Edit Review" class="mb-4" />
             </div>
 
-            <ReviewForm button-text="Update Review" :review="props.review"></ReviewForm>
+            <ReviewForm button-text="Update Review" :review="props.review" :form=submit></ReviewForm>
         </div>
     </AppLayout>
 </template>

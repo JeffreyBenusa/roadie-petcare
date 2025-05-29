@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <title>Jobs Index</title>
-        <meta name="description" content="Jobs Tag Index" head-key="description">
+        <title>Listings Index</title>
+        <meta name="description" content="Listings Tag Index" head-key="description">
     </Head>
 
     <Hero title="Pet Care by People Who Get the Gig Life" subtitle="From techs and tour managers to locals who’ve walked the walk — this is where pet lovers and crew life connect. Find pet care without the formalities. Just people who get it."

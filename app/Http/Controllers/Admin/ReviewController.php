@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReviewRequest;
 use App\Models\Review;
-use App\Models\ServiceType;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -31,7 +31,7 @@ class ReviewController extends Controller
                 'body' => $review->body,
                 'rating' => $review->rating,
                 'user' => $review->user?->name,
-                'job' => $review->job?->title
+                'listing' => $review->listing?->title
             ])
             ->withQueryString();
         
@@ -59,7 +59,7 @@ class ReviewController extends Controller
     {
         $attributes = $request->validated();
         
-        $attributes['user_id'] = auth()->id();
+        $attributes['provider_id'] = auth()->id();
         
         Review::create($attributes);
         
@@ -99,7 +99,7 @@ class ReviewController extends Controller
         // Perform the update
         $review->update($request->validated());
         
-        // Redirect back to the jobs index
+        // Redirect back to the listings index
         return to_route('admin.reviews.index');
     }
 

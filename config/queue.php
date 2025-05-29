@@ -76,7 +76,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Job Batching
+    | Listing Batching
     |--------------------------------------------------------------------------
     |
     | The following options configure the database and table that store job
@@ -96,8 +96,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | These options configure the behavior of failed queue job logging so you
-    | can control how and where failed jobs are stored. Laravel ships with
-    | support for storing failed jobs in a simple file or in a database.
+    | can control how and where failed listings are stored. Laravel ships with
+    | support for storing failed listings in a simple file or in a database.
     |
     | Supported drivers: "database-uuids", "dynamodb", "file", "null"
     |

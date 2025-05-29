@@ -9,7 +9,7 @@ const form = reactive({
 });
 
 const submit = () => {
-    Inertia.post('/jobs', form)
+    Inertia.post('/listings', form)
 }
 
 </script>
@@ -33,7 +33,7 @@ const submit = () => {
             <p class="mt-3 text-sm/6 text-gray-600">Write a few sentences about yourself.</p>
         </div>
         <div class="mt-12">
-            <input type="submit" value="Create Job" class="px-4 py-2 text-white bg-indigo-600 rounded-md"/>
+            <input type="submit" value="Create Listing" class="px-4 py-2 text-white bg-indigo-600 rounded-md"/>
         </div>
     </form>
 

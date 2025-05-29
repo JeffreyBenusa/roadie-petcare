@@ -12,7 +12,7 @@ class Review extends Pivot
     
     protected $fillable = [
         'provider_id',
-        'job_id',
+        'listing_id',
         'rating',
         'title',
         'body'
@@ -26,8 +26,8 @@ class Review extends Pivot
         return $this->belongsTo(User::class, 'provider_id');
     }
     
-    public function job() : belongsTo
+    public function listing() : belongsTo
     {
-        return $this->belongsTo(Job::class);
+        return $this->belongsTo(Listing::class);
     }
 }

@@ -59,7 +59,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                         <TableHead>Body</TableHead>
                         <TableHead>Review</TableHead>
                         <TableHead>User</TableHead>
-                        <TableHead>Job</TableHead>
+                        <TableHead>Listing</TableHead>
 
                     </TableRow>
                 </TableHeader>
@@ -77,7 +77,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                         <TableCell class="max-w-lg">{{ review.body }}</TableCell>
                         <TableCell>{{ review.rating }}</TableCell>
                         <TableCell>{{ review.user }}</TableCell>
-                        <TableCell>{{ review.job }}</TableCell>
+                        <TableCell>{{ review.listing }}</TableCell>
                     </TableRow>
                 </TableBody>
             </Table>

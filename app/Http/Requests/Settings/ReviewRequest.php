@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Settings;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Job;
+use App\Models\Listing;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewRequest extends FormRequest
@@ -17,7 +17,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'title' => 'required|min:5',
-            'service_type_id' => 'required|exists:service_types,id',
+            'service_id' => 'required|exists:service_types,id',
             'description' => 'required|min:10',
         ];
     }

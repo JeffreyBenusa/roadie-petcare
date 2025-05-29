@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Service;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\hasMany;
 
@@ -24,6 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
+        'services'
     ];
 
     /**
@@ -46,6 +49,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'services' => 'array',
         ];
     }
     
@@ -70,5 +74,17 @@ class User extends Authenticatable
                 return round($reviews->average('rating'), 1);
             },
         );
+    }
+    
+    public function availabilities() : hasMany
+    {
+        return $this->hasMany(Availability::class);
+    }
+    
+    public function services()
+    {
+        return Service::whereHas('availabilities', function ($query) {
+            $query->where('user_id', $this->id);
+        })->distinct()->get();
     }
 }

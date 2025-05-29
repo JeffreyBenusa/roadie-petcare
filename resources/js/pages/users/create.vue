@@ -1,7 +1,7 @@
 <template>
     <Head>
-        <title>Create Job</title>
-        <meta name="description" content="Create Job" head-key="description">
+        <title>Create Listing</title>
+        <meta name="description" content="Create Listing" head-key="description">
         <meta name="robots" content="noindex,nofollow" head-key="create">
     </Head>
 
@@ -26,7 +26,7 @@
                 <p class="mt-2 text-sm text-red-600" v-if="form.errors.description">{{form.errors.description}}</p>
             </div>
             <div class="mt-12">
-                <input type="submit" value="Create Job" class="px-4 py-2 text-white bg-indigo-600 rounded-md"/>
+                <input type="submit" value="Create Listing" class="px-4 py-2 text-white bg-indigo-600 rounded-md"/>
             </div>
         </form>
     </section>
@@ -37,7 +37,7 @@ import Hero from "@/shared/hero/common.vue"
 import {useForm} from "@inertiajs/vue3";
 
 defineOptions({
-    name: "Create Job",
+    name: "Create Listing",
     components: {Hero},
 })
 
@@ -47,7 +47,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.submit('post', '/jobs', {
+    form.submit('post', '/listings', {
         preserveScroll: true,
         onError: params => {
             console.log(params)

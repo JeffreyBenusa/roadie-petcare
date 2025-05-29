@@ -45,8 +45,8 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Jobs',
-        href: '/dashboard/jobs',
+        title: 'Listings',
+        href: '/dashboard/listings',
         icon: LayoutGrid,
     },
 ];

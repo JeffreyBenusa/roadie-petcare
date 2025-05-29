@@ -9,6 +9,13 @@ import Label from "@/components/ui/label/Label.vue";
 const props = defineProps({
     review: Object,
     buttonText: String,
+    form: {
+        type: Object,
+        default: () => ({
+            url: '/admin/listings',
+            method: 'post'
+        })
+    }
 });
 
 const form = useForm({
@@ -18,12 +25,18 @@ const form = useForm({
 });
 
 function submit() {
-    form.post("/admin/reviews"); // Submit the form
+    form.submit(
+        props.form.method,
+        props.form.url
+    );
 }
+
 </script>
 
 <template>
     <!-- Form -->
+
+    {{ props.form}}
     <form @submit.prevent="submit" class="space-y-6 max-w-xl">
         <!-- Review Title -->
 

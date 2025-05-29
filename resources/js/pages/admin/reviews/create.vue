@@ -35,7 +35,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         <div class="flex flex-col gap-4 rounded-xl p-4">
             <!-- Form Header -->
             <div class="flex w-full items-center justify-between">
-                <Heading title="Create Review" description="todo: Job Lookups field" class="mb-4"></Heading>
+                <Heading title="Create Review" description="todo: Listing Lookups field" class="mb-4"></Heading>
             </div>
             <!--<ReviewForm button-text="Create Review"></ReviewForm>-->
         </div>

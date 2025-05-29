@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Job;
+use App\Models\Listing;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewRequest extends FormRequest

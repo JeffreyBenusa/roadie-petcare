@@ -3,17 +3,17 @@
 use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\JobController;
+use App\Http\Controllers\ListingController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AvailabilityDateController;
+use App\Http\Controllers\AvailabilityController;
 
 
 Route::get('/', [HomepageController::class, 'show'])->name('home');
 
-Route::get('jobs', [JobController::class, 'index'])->name('jobs.index');
-Route::get('jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+Route::get('listings', [ListingController::class, 'index'])->name('listings.index');
+Route::get('listings/{id}', [ListingController::class, 'show'])->name('listings.show');
 
-Route::get('/providers', [AvailabilityDateController::class, 'search'])->name('providers.index');
+Route::get('/providers', [AvailabilityController::class, 'search'])->name('providers.index');
 
 Route::resource('users', UserController::class);
 

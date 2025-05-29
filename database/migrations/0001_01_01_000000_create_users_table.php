@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('body');
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['member', 'team','admin'])->default('member');
+            $table->json('services')->nullable(); // Stores selected service types
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -9,7 +9,7 @@ import Button from '@/shared/Button.vue'
 import logoUrl from '@images/logo.svg'
 
 const navigation = [
-    {name: 'Jobs', href: '/jobs'}]
+    {name: 'Listings', href: '/listings'}]
 
 defineOptions({
     name: 'Navigation',
@@ -42,8 +42,8 @@ const mobileMenuOpen = ref(false)
                       class="">{{ item.name }}
                 </Link>
                 <Button v-if="!user" href="/login" class="button">Log in <span aria-hidden="true">&rarr;</span></Button>
-                <Link href="/admin/jobs/create" v-if="user?.can.job.create" class="button">
-                    Create Job
+                <Link href="/admin/listings/create" v-if="user?.can.listing.create" class="button">
+                    Create Listing
                 </Link>
             </div>
         </nav>

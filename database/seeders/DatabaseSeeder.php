@@ -3,11 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Review;
-use App\Models\ServiceType;
-use App\Models\Job;
+use App\Models\Service;
+use App\Models\Listing;
 use App\Models\User;
+use App\Models\Booking;
+use App\Models\Availability;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use Database\Seeders\AvailabilityDateSeeder;
 use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
@@ -36,32 +38,27 @@ class DatabaseSeeder extends Seeder
         ];
         
         foreach ($types as $type) {
-            ServiceType::firstOrCreate(['name' => $type['name']], $type);
+            Service::firstOrCreate(['name' => $type['name']], $type);
         }
         
         // Create service providers with their availabilities
-        $users = User::factory()
-            ->count(10)
-            ->create();
+        User::factory()->count(10)->create();
         
-        $jobs = Job::factory()
-            ->count(20)
+        $users = User::all();
+        
+        $listings = Listing::factory(10)
             ->create([
                 'publisher_id' => $admin->id,
             ]);
         
-        
-        foreach ($jobs as $job) {
+        foreach ($listings as $listing) {
             Review::factory([
-                'job_id' => $job->id,
+                'listing_id' => $listing->id,
                 'provider_id' => $users->random()->id,
             ])->create();
         }
         
+        Booking::factory()->count(10)->create();
         
-        // Call separate Seeders
-        $this->call([
-            AvailabilityDateSeeder::class,
-        ]);
     }
 }

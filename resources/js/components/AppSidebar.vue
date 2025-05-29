@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Dog, MessageSquareQuoteIcon, Calendar} from 'lucide-vue-next';
+import { BookOpen, Folder, LayoutGrid, Dog, MessageSquareQuoteIcon, Calendar, BookPlus} from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -15,8 +15,8 @@ const mainNavItems: NavItem[] = [
         icon: LayoutGrid,
     },
     {
-        title: 'Jobs',
-        href: '/admin/jobs',
+        title: 'Listings',
+        href: '/admin/listings',
         icon: Dog,
     },
     {
@@ -29,7 +29,11 @@ const mainNavItems: NavItem[] = [
         href: '/admin/availability',
         icon: Calendar,
     },
-
+    {
+        title: 'Bookings',
+        href: '/admin/bookings',
+        icon: BookPlus,
+    },
 ];
 
 const footerNavItems: NavItem[] = [

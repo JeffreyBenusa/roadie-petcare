@@ -3796,7 +3796,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Dispatch a command to its appropriate handler in the current process.
          * 
-         * Queueable jobs will be dispatched to the "sync" queue.
+         * Queueable listings will be dispatched to the "sync" queue.
          *
          * @param mixed $command
          * @param mixed $handler
@@ -3837,7 +3837,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Create a new batch of queueable jobs.
+         * Create a new batch of queueable listings.
          *
          * @param \Illuminate\Support\Collection|array|mixed $jobs
          * @return \Illuminate\Bus\PendingBatch 
@@ -3850,7 +3850,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Create a new chain of queueable jobs.
+         * Create a new chain of queueable listings.
          *
          * @param \Illuminate\Support\Collection|array $jobs
          * @return \Illuminate\Foundation\Bus\PendingChain 
@@ -3943,7 +3943,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Specify the jobs that should be dispatched instead of faked.
+         * Specify the listings that should be dispatched instead of faked.
          *
          * @param array|string $jobsToDispatch
          * @return \Illuminate\Support\Testing\Fakes\BusFake 
@@ -3998,7 +3998,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert that no jobs were dispatched.
+         * Assert that no listings were dispatched.
          *
          * @return void 
          * @static 
@@ -4094,7 +4094,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert if a chain of jobs was dispatched.
+         * Assert if a chain of listings was dispatched.
          *
          * @param array $expectedChain
          * @return void 
@@ -4107,7 +4107,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert no chained jobs was dispatched.
+         * Assert no chained listings was dispatched.
          *
          * @return void 
          * @static 
@@ -4172,7 +4172,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert that no batched jobs were dispatched.
+         * Assert that no batched listings were dispatched.
          *
          * @return void 
          * @static 
@@ -4184,7 +4184,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert that no jobs were dispatched, chained, or batched.
+         * Assert that no listings were dispatched, chained, or batched.
          *
          * @return void 
          * @static 
@@ -4196,7 +4196,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get all of the jobs matching a truth-test callback.
+         * Get all of the listings matching a truth-test callback.
          *
          * @param string $command
          * @param callable|null $callback
@@ -4210,7 +4210,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get all of the jobs dispatched synchronously matching a truth-test callback.
+         * Get all of the listings dispatched synchronously matching a truth-test callback.
          *
          * @param string $command
          * @param callable|null $callback
@@ -4224,7 +4224,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get all of the jobs dispatched after the response was sent matching a truth-test callback.
+         * Get all of the listings dispatched after the response was sent matching a truth-test callback.
          *
          * @param string $command
          * @param callable|null $callback
@@ -12582,7 +12582,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Specify the jobs that should be queued instead of faked.
+         * Specify the listings that should be queued instead of faked.
          *
          * @param array|string $jobsToBeQueued
          * @return \Illuminate\Support\Testing\Fakes\QueueFake 
@@ -12624,7 +12624,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert if a job was pushed with chained jobs based on a truth-test callback.
+         * Assert if a job was pushed with chained listings based on a truth-test callback.
          *
          * @param string $job
          * @param array $expectedChain
@@ -12693,7 +12693,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert the total count of jobs that were pushed.
+         * Assert the total count of listings that were pushed.
          *
          * @param int $expectedCount
          * @return void 
@@ -12706,7 +12706,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Assert that no jobs were pushed.
+         * Assert that no listings were pushed.
          *
          * @return void 
          * @static 
@@ -12718,7 +12718,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get all of the jobs matching a truth-test callback.
+         * Get all of the listings matching a truth-test callback.
          *
          * @param string $job
          * @param callable|null $callback
@@ -12745,7 +12745,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get all of the jobs by listener class, passing an optional truth-test callback.
+         * Get all of the listings by listener class, passing an optional truth-test callback.
          *
          * @param class-string $listenerClass
          * @param (\Closure(mixed, \Illuminate\Events\CallQueuedListener, string|null, mixed): bool)|null $callback
@@ -12759,7 +12759,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Determine if there are any stored jobs for a given class.
+         * Determine if there are any stored listings for a given class.
          *
          * @param string $job
          * @return bool 
@@ -12888,7 +12888,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Push an array of jobs onto the queue.
+         * Push an array of listings onto the queue.
          *
          * @param array $jobs
          * @param mixed $data
@@ -12903,7 +12903,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Get the jobs that have been pushed.
+         * Get the listings that have been pushed.
          *
          * @return array 
          * @static 
@@ -12927,7 +12927,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Specify if jobs should be serialized and restored when being "pushed" to the queue.
+         * Specify if listings should be serialized and restored when being "pushed" to the queue.
          *
          * @param bool $serializeAndRestore
          * @return \Illuminate\Support\Testing\Fakes\QueueFake 
@@ -13010,7 +13010,7 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         * Delete all of the jobs from the queue.
+         * Delete all of the listings from the queue.
          *
          * @param string $queue
          * @return int 
